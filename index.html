@@ -20,7 +20,7 @@
       </form>
       <ul class="list-group">
         <li ng-repeat = "user in searchCtrl.searchResult.items">
-        <img ng-src="{{user.avatar_url}}&s=50">
+        <img ng-src="{{user.avatar_url}}&s=50" width=50px height=50px>
         <a ng-href = "{{user.html_url}}"><span ng-bind="user.login"></span></a>
         </li>
       </ul>

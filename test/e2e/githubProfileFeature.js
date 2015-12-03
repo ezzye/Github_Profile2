@@ -1,51 +1,42 @@
-// describe('GitHub profile finder', function() {
-//   it('finds profiles', function() {
-//     browser.get('http://localhost:8080');
-
-//     element(by.model('searchCtrol.searchTerm')).sendKeys('stephenlloyd');
-//     element(by.className('btn')).click();
-
-//     expect(element(by.binding('user.login')).getText()).
-//         toEqual('stephenlloyd');
-//   });
-// });
-
-// describe('Github Profile finder', function() {
-
-//   it('finds profiles', function() {
-//     browser.get('http://localhost:8080');
-
-//     element(by.model('searchCtrl.searchTerm')).sendKeys('spike01');
-//     element(by.className('btn')).click();
-//     expect(element(by.binding('user.login')).getText()).
-//         toEqual('spike0');
-//   });
-// });
-
-
-// describe('Github Profile Finder', function() {
-//   it('finds profiles', function() {
-//     browser.get('http://localhost:8080');
-
-
-//    element(by.model('searchCtrl.searchTerm')).sendKeys('spike01');
-//     element(by.className('btn')).click();
-
-//     expect(element(by.binding('user.login')).getText()).toEqual('spike01');
-//     });
-//   });
-
-
-
 describe('GitHub profile finder', function() {
+
+  var searchBox = element(by.model('searchCtrl.searchTerm'));
+  var searchButton = element(by.className('btn'));
+
+  beforeEach(function() {
+    browser.get('http://localhost:8080');
+  });
+
+  it('has a title',function() {
+    expect(browser.getTitle()).toEqual('Github user search');
+  });
+
  it('finds profiles', function() {
-   browser.get('http://localhost:8080');
 
-   element(by.model('searchCtrl.searchTerm')).sendKeys('Mattia46');
-   element(by.className('btn')).click();
-
+   searchBox.sendKeys('Mattia46');
    expect(element(by.binding('user.login')).getText()).
    toEqual('Mattia46');
-   browser.pause();
  });
 });
+
+
+// describe('GitHub profile finder', function() {
+
+//   var searchBox = element(by.model('searchCtrl.searchTerm'))
+//   var searchButton = element(by.className('btn'))
+
+//   beforeEach(function() {
+//     browser.get('http://localhost:8080');
+//   })
+
+//   it('has a title', function() {
+//     expect(browser.getTitle()).toEqual('Github user search');
+//   });
+
+//   it('finds profiles', function() {
+//     searchBox.sendKeys('spike01');
+//     //Complete this test using the variables above!
+//     expect(element(by.binding('user.login')).getText()).toEqual('spike01');
+//   });
+
+// });
